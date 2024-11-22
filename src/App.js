@@ -1,9 +1,9 @@
+
 import './App.css';
 import React, {useState} from 'react'
 
 
 function App() {
-
   // state
   const [weight, setWeight] = useState(0)
   const [height, setHeight] = useState(0)
@@ -42,7 +42,7 @@ function App() {
   } else
    {
     // if(bmi < 25) {
-    //   imgSrc = require('../src/assets/underweight.png')
+    //   imgSrc = require()
     // }
     //  else if (bmi >= 25 && bmi < 30) {
     //   imgSrc = require('')
@@ -60,29 +60,31 @@ function App() {
   
 
   return (
-    <div className="App">
+
+    // <div className="App bg-info rounded-5 p-5 w-100 mx-auto text-center " style={{height:'100vh'}}>
     
-    <div className="app">
-      <div className='container'>
+    <div className="app bg-white rounded-5 p-5 mt-5 w-100" style={{height:'75vh'}}>
+      <div className='container-fluid bg-dark rounded-5 text-white p-5 mx-auto text-center w-100'>
         <h2 className='center'>BMI Calculator</h2>
-        <form onSubmit={calcBmi}>
-          <div>
-            <label>Weight (KG)</label>
-            <input value={weight} onChange={(e) => setWeight(e.target.value)} />
+        <form onSubmit={calcBmi} className='p-5 border borderd rounded-5 '>
+          <div className='border borderd rounded-5 mt-2 '>
+            <label>Weight (KG)</label> 
+            <input className='form-control bntshop rounded-5  ' value={weight} onChange={(e) => setWeight(e.target.value)} />
           </div>
-          <div>
+          <div className='border borderd rounded-5 mt-2 '>
             <label>Height (cm)</label>
-            <input value={height} onChange={(event) => setHeight(event.target.value)} />
+            <input className='form-control bntshop rounded-5 ' value={height} onChange={(event) => setHeight(event.target.value)} />
           </div>
-          <div>
-            <button className='btn' type='submit'>Submit</button>
-            <button className='btn btn-outline' onClick={reload} type='submit'>Reload</button>
+          <div className=' rounded-5 bg-dark mt-1 '>
+            <button className='btn btnshop mt-1 ms-5' type='submit'>Submit</button>
+            <button className='btn btnshop btn-outline mt-1 ms-3 ' onClick={reload} type='submit'>Reload</button>
+           
           </div>
         </form>
 
         <div className='center'>
           <h3>Your BMI is: {bmi}</h3>
-          <p>{message}</p>
+          <p className='btnshop'>{message}</p>
         </div>
 
         <div className='img-container'>
@@ -90,11 +92,12 @@ function App() {
         </div>
       </div>
     </div>
-  );
 
 
 
-    </div>
+
+    // </div>
+
   );
 }
 
